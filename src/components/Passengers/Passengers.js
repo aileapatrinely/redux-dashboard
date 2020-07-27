@@ -37,7 +37,7 @@ class Passengers extends Component {
 
         <ul>
           PASSENGER LIST:
-          <li>{this.props.store.peopleReducer.name}</li>
+          {this.props.store.peopleReducer.name}
         </ul>
       </div>
     );
