@@ -35,7 +35,12 @@ class Passengers extends Component {
         />
         <button onClick={this.addPassenger}>Add Passenger</button>
 
-        <ul>PASSENGER LIST: {this.props.store.peopleReducer}</ul>
+        <ul>
+          PASSENGER LIST:{' '}
+          {this.props.store.peopleReducer.map(
+            ((name, index) = <li key={index}>{name}</li>)
+          )}
+        </ul>
       </div>
     );
   }
