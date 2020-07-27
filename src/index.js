@@ -6,11 +6,26 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-// put your reducers here!
+const name = ['Default'];
 
+const speedReducer = (state = 0, action) => {
+  if (action.type === 'INCREASE_SPEED') {
+    return state + 1;
+  } else if (action.type === 'DECREASE_SPEED') {
+    return state - 1;
+  }
+  return state;
+};
+
+const peopleReducer = (state = name, action) => {
+  if (action.type === 'ADD_PERSON') {
+    return [...state, action.payload];
+  }
+  return state;
+};
 // be sure to combine your reducers!
 const storeInstance = createStore(
-  // reducers,
+  combineReducers({ speedReducer, peopleReducer }),
   applyMiddleware(logger)
 );
 
