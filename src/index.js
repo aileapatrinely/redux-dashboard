@@ -6,8 +6,6 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const name = ['Default'];
-
 const speedReducer = (state = 0, action) => {
   if (action.type === 'INCREASE_SPEED') {
     return state + 1;
@@ -17,7 +15,7 @@ const speedReducer = (state = 0, action) => {
   return state;
 };
 
-const peopleReducer = (state = name, action) => {
+const peopleReducer = (state = '', action) => {
   if (action.type === 'ADD_PERSON') {
     return [...state, action.payload];
   }

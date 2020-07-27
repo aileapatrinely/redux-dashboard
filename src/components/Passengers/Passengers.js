@@ -37,9 +37,7 @@ class Passengers extends Component {
 
         <ul>
           PASSENGER LIST:
-          {this.props.store.peopleReducer.map((name, index) => (
-            <li key={index}>{name}</li>
-          ))}
+          <li>{this.props.store.peopleReducer.name}</li>
         </ul>
       </div>
     );
